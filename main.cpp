@@ -64,7 +64,17 @@ int main() {
 			shapes.push_back(new Square(length));
 			cout << "Inserted... " << endl << endl;
 		}else if (menuOption == 7){ // List all Ellipses
-
+			cout << "Only Ellipses" << endl;
+			for (Shape* shape: shapes){
+				if (dynamic_cast<Ellipse*>(shape) != nullptr) {
+					Ellipse* ellipse = dynamic_cast<Ellipse*>(shape);
+					cout << shape->ToString() << endl;
+					cout << "\tPerimeter:    " << shape->Perimeter() << endl;
+					cout << "\tArea:         " << shape->Area() << endl;
+					cout << "\tEccentricity: " << ellipse->Eccentricity() << endl;
+					cout << endl;
+				}
+			}
 		}else if (menuOption == 8){ // List all Triangles
 
 		}else if (menuOption == 9){ // List all Rectangles
@@ -72,8 +82,8 @@ int main() {
 		}else if (menuOption == 10){ // List all shapes
 			for (Shape* shape: shapes){
 				cout << shape->ToString() << endl;
-				cout << "\tPerimeter: " << shape->Perimeter() << endl;
-				cout << "\tArea:      " << shape->Area() << endl;
+				cout << "\tPerimeter:    " << shape->Perimeter() << endl;
+				cout << "\tArea:         " << shape->Area() << endl;
 				cout << endl;
 			}
 		}else{
