@@ -21,26 +21,61 @@ int main() {
 	vector<Shape*> shapes;
 	int menuOption;
 	while ( (menuOption = Menu()) != 11){
-		if (menuOption == 1){
+		if (menuOption == 1){ // Ellipse
+			double a, b;
+			cout << "Input major semi-axis length: ";
+			cin >> a;
+			cout << "Input minor semi-axis length: ";
+			cin >> b;
+			shapes.push_back(new Ellipse(a, b));
+			cout << "Inserted... " << endl << endl;
+		}else if (menuOption == 2){ // Circle
+			double radius;
+			cout << "Input radius length: ";
+			cin >> radius;
+			shapes.push_back(new Circle(radius));
+			cout << "Inserted... " << endl << endl;
+		}else if (menuOption == 3){ // Triangle
+			double a, b, c;
+			cout << "Input length of three sides: ";
+			cin >> a >> b >> c;
+			shapes.push_back(new Triangle(a, b, c));
+			cout << "Inserted... " << endl << endl;
+		}else if (menuOption == 4){ // Isosceles
+			double equalSidesLength, otherSideLength;
+			cout << "Input equal side length: ";
+			cin >> equalSidesLength;
+			cout << "Input other side length: ";
+			cin >> otherSideLength;
+			shapes.push_back(new Isosceles(equalSidesLength, otherSideLength));
+			cout << "Inserted... " << endl << endl;
+		}else if (menuOption == 5){ // Rectangle
+			double base, height;
+			cout << "Input base length: ";
+			cin >> base;
+			cout << "Input height length: ";
+			cin >> height;
+			shapes.push_back(new Rectangle(base, height));
+			cout << "Inserted... " << endl << endl;
+		}else if (menuOption == 6){ // Square
+			double length;
+			cout << "Input side length: ";
+			cin >> length;
+			shapes.push_back(new Square(length));
+			cout << "Inserted... " << endl << endl;
+		}else if (menuOption == 7){ // List all Ellipses
 
-		}else if (menuOption == 2){
+		}else if (menuOption == 8){ // List all Triangles
 
-		}else if (menuOption == 3){
+		}else if (menuOption == 9){ // List all Rectangles
 
-		}else if (menuOption == 4){
-
-		}else if (menuOption == 5){
-
-		}else if (menuOption == 6){
-
-		}else if (menuOption == 7){
-
-		}else if (menuOption == 8){
-
-		}else if (menuOption == 9){
-
-		}else if (menuOption == 10){
-
+		}else if (menuOption == 10){ // List all shapes
+			for (Shape* shape: shapes){
+				cout << shape->ToString() << endl;
+				cout << "\tPerimeter: " << shape->Perimeter() << endl;
+				cout << "\tArea:      " << shape->Area() << endl;
+				cout << endl;
+			}
 		}else{
 			cerr << "This should never happen!" << endl;
 			break;
