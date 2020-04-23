@@ -15,9 +15,38 @@ using std::endl;
 using std::vector;
 
 size_t Menu();
+void DeleteShapes(vector<Shape*>& shapes);
 
 int main() {
 	vector<Shape*> shapes;
+	int menuOption;
+	while ( (menuOption = Menu()) != 11){
+		if (menuOption == 1){
+
+		}else if (menuOption == 2){
+
+		}else if (menuOption == 3){
+
+		}else if (menuOption == 4){
+
+		}else if (menuOption == 5){
+
+		}else if (menuOption == 6){
+
+		}else if (menuOption == 7){
+
+		}else if (menuOption == 8){
+
+		}else if (menuOption == 9){
+
+		}else if (menuOption == 10){
+
+		}else{
+			cerr << "This should never happen!" << endl;
+			break;
+		}
+	}
+	DeleteShapes(shapes);
 	return 0;
 }
 
@@ -50,4 +79,8 @@ size_t Menu(){
 		break;
 	}
 	return static_cast<size_t>(option);
+}
+void DeleteShapes(vector<Shape*>& shapes){
+	for (Shape* shape : shapes)
+		delete shape;
 }
