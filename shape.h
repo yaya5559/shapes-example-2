@@ -15,8 +15,10 @@ class Shape {
 public:
 	Shape();
 	virtual string ToString()const;
-	virtual double Area()const;
-	virtual double Perimeter()const;
+	// Making this two methods pure virtual,
+	// therefore the class becomes Abstract
+	virtual double Area()const=0;
+	virtual double Perimeter()const=0;
 };
 
 
