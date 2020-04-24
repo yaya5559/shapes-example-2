@@ -11,6 +11,7 @@
 using std::string;
 
 class Ellipse : public Shape{
+protected:
 	double _radiusA, _radiusB; // length of the semi-major and semi-minor axis
 public:
 	Ellipse(double radiusA, double radiusB);

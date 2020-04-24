@@ -22,5 +22,6 @@ string Circle::ToString() const {
 }
 
 double Circle::Perimeter() const {
-	return 2 * PI * PI; // We are in trouble!
+	//return 2 * PI * PI; // We are in trouble!
+	return 2 * PI * _radiusA;
 }
